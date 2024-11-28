@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Potvrda brisanja</title>
+</head>
+<body>
+    <h1>Jeste li sigurni da želite obrisati jezik {{ language.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Obriši</button>
+    </form>
+    <a href="{% url 'index' %}">Odustani</a>
+</body>
+</html>
