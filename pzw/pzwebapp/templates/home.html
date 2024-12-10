@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+
+    {% if user.groups.filter(name='Administrator').exists %}
+        <a href="{% url 'admin_view' %}">Go to Admin Section</a>
+    {% endif %}
+</body>
+</html>
