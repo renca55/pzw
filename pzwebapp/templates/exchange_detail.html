@@ -1,0 +1,11 @@
+<h1>{{ exchange.name }}</h1>
+<p><strong>Opis:</strong> {{ exchange.description }}</p>
+<p><strong>Jezik koji se nudi:</strong> {{ exchange.language_offered }}</p>
+<p><strong>Jezik koji se traži:</strong> {{ exchange.language_requested }}</p>
+<p><strong>Datum:</strong> {{ exchange.date }}</p>
+<p><strong>Sudionici:</strong></p>
+<ul>
+    {% for participant in exchange.participants.all %}
+    <li>{{ participant.username }}</li>
+    {% endfor %}
+</ul>

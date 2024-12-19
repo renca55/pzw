@@ -1,0 +1,13 @@
+<h1>Razmjene jezika</h1>
+<form method="get">
+    <input type="text" name="q" placeholder="Pretraži razmjene..." value="{{ request.GET.q }}">
+    <button type="submit">Pretraži</button>
+</form>
+<ul>
+    {% for exchange in exchanges %}
+    <li>
+        <a href="{{ exchange.get_absolute_url }}">{{ exchange.name }}</a>
+        - {{ exchange.language_offered }} za {{ exchange.language_requested }}
+    </li>
+    {% endfor %}
+</ul>
